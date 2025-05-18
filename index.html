@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sakura Sweets - Vegan Japanese Bakery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #111;
+      color: #f2f2f2;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    .hero img#sakura-flower {
+      width: 280px;
+      max-width: 80%;
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+      transition: transform 0.3s ease;
+    }
+
+    .hero img#sakura-flower:hover {
+      transform: scale(1.05);
+      filter: drop-shadow(0 0 10px rgba(255, 182, 193, 0.6));
+    }
+
+    .ripple {
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      border: 4px solid pink;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .ripple.animate {
+      animation: ripple-effect 1s ease-out forwards;
+    }
+
+    @keyframes ripple-effect {
+      0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0.6;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(2.5);
+        opacity: 0;
+      }
+    }
+
+    .hero-btn {
+      margin-top: 30px;
+      background-color: #91d1a4;
+      color: white;
+      padding: 14px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    .hero-btn:hover {
+      background-color: #6fb78d;
+    }
+
+    .japanese-icon {
+      width: 28px;
+      height: 28px;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    .cake {
+      background-color: #222;
+      border-radius: 12px;
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cake:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="images/cherry-blossom-icon.png" alt="Cherry Blossom Icon" class="japanese-icon">
+        Sakura Sweets
+      </div>
+      <ul class="nav-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <div class="ripple"></div>
+      <img id="sakura-flower" src="images/cherry-blossom-icon.png" alt="Sakura Flower">
+      <a href="products.html" class="hero-btn">Shop Now</a>
+    </div>
+  </header>
+
+  <section class="featured-cakes" data-aos="fade-up">
+    <h2>Featured Cakes</h2>
+    <div class="cakes-grid">
+      <div class="cake" data-aos="zoom-in" data-aos-delay="100">
+        <img src="images/matcha-roll.jpg" alt="Matcha Roll Cake">
+        <h3>Matcha Roll Cake</h3>
+        <p>Fluffy and light, filled with vegan cream and premium matcha.</p>
+      </div>
+      <div class="cake" data-aos="zoom-in" data-aos-delay="200">
+        <img src="images/sakura-mochi.png" alt="Sakura Mochi">
+        <h3>Sakura Mochi</h3>
+        <p>Traditional Japanese sweet with cherry blossom leaves and sweet red bean paste.</p>
+      </div>
+      <div class="cake" data-aos="zoom-in" data-aos-delay="300">
+        <img src="images/yuzu-cheesecake.png" alt="Yuzu Cheesecake">
+        <h3>Yuzu Cheesecake</h3>
+        <p>Creamy vegan cheesecake with a refreshing citrusy twist.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews" data-aos="fade-up">
+    <h2>What Our Customers Say</h2>
+    <div class="review" data-aos="fade-right">
+      <p>“Absolutely delicious! You’d never guess it’s all vegan.” – Ayumi S.</p>
+    </div>
+    <div class="review" data-aos="fade-right" data-aos-delay="150">
+      <p>“The matcha cake reminds me of my childhood in Kyoto. So nostalgic.” – Kenji T.</p>
+    </div>
+    <div class="review" data-aos="fade-right" data-aos-delay="300">
+      <p>“Elegant, healthy, and authentic. I’m obsessed with the sakura mochi!” – Lisa M.</p>
+    </div>
+  </section>
+
+ <footer>
+  <p>Connect with us:</p>
+  <p><a href="#" id="email-trigger">Email Us</a></p>
+  <p><a href="#" id="phone-trigger">Call Us</a></p>
+  <p>&copy; 2025 Sakura Sweets. All rights reserved.</p>
+</footer>
+
+<!-- Email & Phone Modal -->
+<div id="info-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h3 id="info-title"></h3>
+    <p id="info-detail" style="margin-top: 10px; color: #ccc;"></p>
+  </div>
+</div>
+
+
+
+  <script>
+    const flower = document.getElementById('sakura-flower');
+    const ripple = document.querySelector('.ripple');
+
+    flower.addEventListener('click', () => {
+      ripple.classList.remove('animate');
+      void ripple.offsetWidth;
+      ripple.classList.add('animate');
+    });
+  </script>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+  <script>
+  const infoModal = document.getElementById("info-modal");
+  const infoTitle = document.getElementById("info-title");
+  const infoDetail = document.getElementById("info-detail");
+
+  document.getElementById("email-trigger").addEventListener("click", (e) => {
+    e.preventDefault();
+    infoTitle.textContent = "Email Us";
+    infoDetail.textContent = "sakurasweetsnew@gmail.com";
+    infoModal.style.display = "flex";
+  });
+
+  document.getElementById("phone-trigger").addEventListener("click", (e) => {
+    e.preventDefault();
+    infoTitle.textContent = "Call Us";
+    infoDetail.textContent = "+91 9692575833";
+    infoModal.style.display = "flex";
+  });
+
+  document.querySelectorAll(".close-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      infoModal.style.display = "none";
+    });
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === infoModal) {
+      infoModal.style.display = "none";
+    }
+  });
+</script>
+
+</body>
+</html>

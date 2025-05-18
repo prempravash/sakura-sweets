@@ -1,0 +1,363 @@
+/* style.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: #fdfcfc;
+  color: #000000; /* dark charcoal text */
+}
+
+header {
+  background: linear-gradient(to bottom right, #ffe6f0, #d3f7d8);
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+header .overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 60px 30px;
+  border-radius: 16px;
+}
+
+header h1 {
+  color: #fff;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+header button {
+  padding: 12px 28px;
+  background-color: #91d1a4;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+header button:hover {
+  background-color: #88648b;
+}
+
+.japanese-icon {
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+  vertical-align: middle;
+  filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.2));
+  border: 1.5px solid #ffc0cb;
+  border-radius: 50%;
+  padding: 2px;
+  background-color: white;
+}
+
+.japanese-elements:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #509e6e;
+}
+
+.cakes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.cake {
+ background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.cake:hover {
+  transform: translateY(-8px) scale(1.02);
+   border: 1px solid #00000033;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to bottom right, #977289, #520836);
+}
+
+.cake img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.reviews {
+  background-color: #1a1a1a;
+  color: #f5f5f5;
+  padding: 60px 20px;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  margin-top: 40px;
+}
+.reviews .review {
+  background-color: #2a2a2a;
+  border-left: 4px solid #91d1a4;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px; /* Rounded corners */
+  font-style: italic;
+  color: #eaeaea;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+footer {
+  background-color: #0d0d0d;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 0.9rem;
+}
+
+footer a {
+  margin: 0 10px;
+  color: #91d1a4;
+  text-decoration: none;
+}
+footer a:hover {
+  color: #520836;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  padding: 20px 60px;
+  z-index: 1000;
+
+  background: rgba(0, 0, 0, 0.6); /* Black glass */
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0 0 30px 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: navbarFadeIn 0.8s ease-out forwards;
+}
+
+/* Logo and Links Alignment */
+.navbar .logo {
+  font-size: 1.4rem;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.navbar .nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-links li a:hover {
+  color: #ff9ccf;
+}
+
+/* Entry animation */
+@keyframes navbarFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Hero Section --- */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+padding-top: 160px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #2f2f2f;
+  margin-bottom: 30px;
+}
+
+.hero-btn {
+  background-color: #000; /* black button */
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  padding: 14px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.hero-btn:hover {
+  background-color: #444;
+}
+.flower-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  animation: fadeIn 1.5s ease-in;
+}
+
+#sakura-flower {
+  width: 240px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+#sakura-flower:hover {
+  transform: scale(1.03);
+}
+
+.ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 2px solid #ffb6c1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+  z-index: 1;
+}
+
+.ripple.animate {
+  animation: ripple-wave 1s ease-out;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 15, 15, 0.7);
+  backdrop-filter: blur(6px);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  color: white;
+  position: relative;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  backdrop-filter: blur(15px);
+  animation: fadeIn 0.4s ease;
+}
+
+.modal-content img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #ff8db2;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes ripple-wave {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.6;
+  }
+  100% {
+    width: 250px;
+    height: 250px;
+    opacity: 0;
+  }
+}
+/* Reuse existing modal styles if you have one */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 15, 15, 0.7);
+  backdrop-filter: blur(6px);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  color: white;
+  position: relative;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  backdrop-filter: blur(15px);
+  animation: fadeIn 0.4s ease;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #ff8db2;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sakura Sweets - Products</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="product.css">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="images/cherry-blossom-icon.png" alt="Icon"> Sakura Sweets
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <!-- <li><a href="products.html">Products</a></li> -->
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <h1 class="section-title" data-aos="fade-up">Our Products</h1>
+
+  <section class="products-container">
+    <div class="product-card" data-aos="fade-up"
+      data-title="Matcha Roll Cake"
+      data-description="Fluffy and light, filled with vegan cream and premium matcha."
+      data-image="images/matcha-roll.jpg"
+      data-history="Inspired by Kyoto’s tea houses, this roll cake blends centuries of tradition with modern plant-based finesse.">
+      <img src="images/matcha-roll.jpg" alt="Matcha Roll Cake">
+      <h3>Matcha Roll Cake</h3>
+      <p>Fluffy and light, filled with vegan cream and premium matcha.</p>
+    </div>
+
+    <div class="product-card" data-aos="fade-up" data-aos-delay="100"
+      data-title="Sakura Mochi"
+      data-description="Traditional Japanese sweet with cherry blossom leaves and red bean paste."
+      data-image="images/sakura-mochi.png"
+      data-history="Sakura mochi dates back to the Edo period, symbolizing the fleeting beauty of cherry blossoms.">
+      <img src="images/sakura-mochi.png" alt="Sakura Mochi">
+      <h3>Sakura Mochi</h3>
+      <p>Traditional Japanese sweet with cherry blossom leaves and red bean paste.</p>
+    </div>
+
+    <div class="product-card" data-aos="fade-up" data-aos-delay="200"
+      data-title="Yuzu Cheesecake"
+      data-description="Creamy vegan cheesecake with a refreshing yuzu twist."
+      data-image="images/yuzu-cheesecake.png"
+      data-history="Yuzu’s zesty note brings a refreshing uplift to this dairy-free indulgence loved across Tokyo cafes.">
+      <img src="images/yuzu-cheesecake.png" alt="Yuzu Cheesecake">
+      <h3>Yuzu Cheesecake</h3>
+      <p>Creamy vegan cheesecake with a refreshing yuzu twist.</p>
+    </div>
+
+    <div class="product-card" data-aos="fade-up" data-aos-delay="300"
+      data-title="Black Sesame Cake"
+      data-description="Rich in flavor and nutrition with nutty black sesame taste."
+      data-image="images/black-sesame-cake.jpg"
+      data-history="A bold twist on traditional wagashi, this cake celebrates black sesame’s nutty warmth.">
+      <img src="images/black-sesame-cake.jpg" alt="Black Sesame Cake">
+      <h3>Black Sesame Cake</h3>
+      <p>Rich in flavor and nutrition with nutty black sesame taste.</p>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="product-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <img id="modal-image" src="" alt="">
+      <h3 id="modal-title"></h3>
+      <p id="modal-description"></p>
+      <p id="modal-history" style="margin-top: 10px; color: #aaa;"></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Sakura Sweets. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    const modal = document.getElementById("product-modal");
+    const modalImg = document.getElementById("modal-image");
+    const modalTitle = document.getElementById("modal-title");
+    const modalDesc = document.getElementById("modal-description");
+    const modalHist = document.getElementById("modal-history");
+    const closeBtn = document.querySelector(".close-btn");
+
+    document.querySelectorAll(".product-card").forEach(card => {
+      card.addEventListener("click", () => {
+        modalImg.src = card.dataset.image;
+        modalTitle.textContent = card.dataset.title;
+        modalDesc.textContent = card.dataset.description;
+        modalHist.textContent = card.dataset.history;
+        modal.style.display = "flex";
+      });
+    });
+
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>

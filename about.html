@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Sakura Sweets</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="about.css">
+</head>
+<body>
+  <nav class="navbar">
+    
+    <div class="logo">Sakura Sweets</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <!-- <li><a href="about.html" class="active">About Us</a></li> -->
+      <li><a href="products.html">Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="about-header">
+    <h1 class="fade-in">About Sakura Sweets</h1>
+    <p class="fade-in delay-1">Crafting Vegan, Japanese-Inspired Cakes – Fresh Every Time.</p>
+  </header>
+
+  <section class="content">
+    <div class="card fade-in delay-2">
+      <h2>Our Mission</h2>
+      <ul>
+        <li>🌱 <strong>100% Vegan</strong> – No dairy, no eggs, no compromise.</li>
+        <li>🍓 <strong>Always Fresh</strong> – Baked to order with premium ingredients.</li>
+        <li>🍰 <strong>Japanese-Inspired Flavors</strong> – Light, elegant, and beautifully balanced.</li>
+      </ul>
+    </div>
+
+    <div class="card fade-in delay-3">
+      <h2>Why Choose Us?</h2>
+      <ul>
+        <li>🎂 <strong>Minimalist Designs</strong> – Inspired by traditional Japanese aesthetics.</li>
+        <li>🍵 <strong>Unique Flavors</strong> – Matcha, yuzu, sakura, black sesame & more.</li>
+        <li>🚫 <strong>No Preservatives</strong> – Just pure, plant-based goodness.</li>
+        
+      </ul>
+    </div>
+
+    <div class="card fade-in delay-4">
+      <h2>Our Promise</h2>
+      <p>We’re not just baking cakes — we’re sharing a slice of Japanese culture, one vegan masterpiece at a time.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Sakura Sweets. All rights reserved.</p>
+  </footer>
+
+  <script src="about.js"></script>
+  <script>
+  document.querySelectorAll('.product-card').forEach(card => {
+    card.addEventListener('click', () => {
+      document.getElementById('modal-title').textContent = card.dataset.title;
+      document.getElementById('modal-description').textContent = card.dataset.description;
+      document.getElementById('modal-history').textContent = card.dataset.history;
+      document.getElementById('modal-image').src = card.dataset.img;
+
+      document.getElementById('product-modal').style.display = 'flex';
+    });
+  });
+
+  document.querySelector('.close-btn').addEventListener('click', () => {
+    document.getElementById('product-modal').style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    const modal = document.getElementById('product-modal');
+    if (e.target === modal) modal.style.display = 'none';
+  });
+</script>
+
+</body>
+</html>
