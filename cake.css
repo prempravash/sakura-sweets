@@ -1,0 +1,310 @@
+/* Base reset & theme */
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: #0c0c0c;
+  color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0 0 30px 30px;
+  padding: 20px 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff8db2;
+}
+
+/* Cake Layout */
+.cake-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  padding: 100px 60px;
+  flex-wrap: nowrap;
+}
+
+/* Cake Name Animation */
+.cake-info h1 {
+  font-size: 3rem;
+  color: #ffe5ec;
+  margin-bottom: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #ffe5ec;
+  width: 0;
+  animation:
+    typing 2.5s steps(17, end) forwards,
+    blink 0.7s step-end infinite 2.5s,
+    vanish 1s ease-in-out 5s forwards,
+    restart 0s 8s forwards;
+  animation-delay:
+    0s,                /* typing */
+    2.5s,              /* blink starts after typing ends */
+    5s,                /* vanish after 5s */
+    8s;                /* restart after full cycle */
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 17ch; } /* limit to visible characters only */
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+@keyframes vanish {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.9) translateY(20px); }
+}
+
+@keyframes restart {
+  0% { opacity: 0; width: 0; }
+  100% { opacity: 1; width: 17ch; }
+}
+
+/* Subheading & Description */
+.cake-info h2 {
+  font-size: 3rem;
+  color: #ffe5ec;
+  margin-bottom: 20px;
+}
+
+.cake-info p {
+  font-size: 1.2rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.cake-info h3 {
+  font-size: 1.5rem;
+  color: #ffb6d5;
+  margin-top: 30px;
+}
+
+.cake-info ul {
+  margin-left: 20px;
+  color: #ddd;
+}
+
+/* Cake Image Card */
+.cake-image {
+  flex: 1;
+  min-width: 280px;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cake-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+/* Box for content */
+.cake-info-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(14px);
+  max-width: 700px;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.cake-info-box:hover {
+  transform: translateY(-5px);
+}
+
+/* rope */
+.cake-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 80px 40px;
+  flex-wrap: nowrap; /* Important for side-by-side layout */
+  position: relative;
+}
+
+.glow-connector {
+  width: 120px; /* smaller, tighter */
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin: 0 -20px; /* pull it inward between boxes */
+  position: relative;
+  z-index: 1;
+}
+
+.glow-connector svg {
+  width: 100%;
+  height: auto;
+}
+
+.rope {
+  fill: none;
+  stroke: #ff69b4;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 4px #ff69b4) drop-shadow(0 0 8px #ff69b4);
+  stroke-dasharray: 10;
+  stroke-dashoffset: 0;
+  animation: waveMotion 2s linear infinite;
+}
+
+@keyframes waveMotion {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 20;
+  }
+}
+
+/* rope complete */
+
+
+.cake-image img:hover {
+  transform: scale(1.03) rotate(1deg);
+  box-shadow: 0 20px 50px rgba(255, 141, 178, 0.3);
+}
+
+/* Back Button */
+.view-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #ff8db2;
+  color: #0c0c0c;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(255, 141, 178, 0.2);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.view-btn:hover {
+  background-color: #ffb6d5;
+  transform: translateY(-2px);
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .cake-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 20px;
+  }
+
+  .glow-connector {
+    width: 100px;
+    height: 80px;
+    margin: 0;
+    transform: rotate(90deg); /* turns rope to connect vertically */
+  }
+
+  .glow-connector svg {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  color: #ccc;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .cake-container {
+    flex-direction: column-reverse;
+    padding: 60px 30px;
+    flex-wrap: wrap;
+  }
+
+  .cake-info h1 {
+    font-size: 2.2rem;
+  }
+
+  .cake-info h2 {
+    font-size: 1.8rem;
+  }
+
+  .cake-info p {
+    font-size: 1rem;
+  }
+
+  .cake-info h3 {
+    font-size: 1.2rem;
+  }
+}
